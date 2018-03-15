@@ -59,8 +59,12 @@
       top = _win.top;
     }
 
-    if(_win)  i = container.wins.args.count;
-    else i = 0;
+    if(_wins.window_id_count){
+      i = _wins.window_id_count
+    }
+    else {
+      i = _wins.window_id_count = 1;
+    }
     for(;t<arr.length;t++){
       width = arr[t].width || 600,
       height = arr[t].height || 400;
@@ -70,6 +74,7 @@
         resetPosition();
       }
       i++;
+      _wins.window_id_count++;
       var color = "#515c6b";
       if(i===3) color = "#379cd0";
       new AnimateWin({id:"window_"+i, color: color, top: top, left:left, width:width, height:height,
