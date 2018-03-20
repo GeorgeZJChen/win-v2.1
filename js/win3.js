@@ -148,7 +148,7 @@
         ";top:"+this.top+"px"+
         ";left:"+this.left+"px"+
         ";background-color:"+this.color+
-        ";border:"+this.color+
+        ";border:1px solid "+this.color+
         ";z-index:"+this.wins.args.z_index+
       ";}";
       this.win.appendChild(style);
