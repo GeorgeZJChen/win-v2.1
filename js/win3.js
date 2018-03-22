@@ -9,6 +9,8 @@
     this.color = obj.color || this.color || "#515c6b";
     this.className = obj.className || this.className || "";
     this.containerId = obj.containerId || "window_container";
+    this.minWidth = obj.minWidth || 170;
+    this.minHeight = obj.minHeight || 130;
 
     this.resizable = obj.resizable || this.resizable || true;
     this.draggable = obj.draggable || this.draggable || true;
