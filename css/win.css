@@ -34,14 +34,11 @@ body{
   position: absolute;
   top: 29px;
   bottom: 0;
-  min-width: 150px;
-  min-height: 90px;
 }
 .dragger{
   position: absolute;
   height: 26px;
   width: inherit;
-  min-width: 150px;
   top: 3px;
   z-index: 1;
 
@@ -57,8 +54,6 @@ body{
   position: relative;
   height: inherit;
   width: inherit;
-  min-width: 150px;
-  min-height: 120px;
 }
 .resize>.bar {
   position: absolute;
@@ -66,7 +61,6 @@ body{
 }
 .resize>.bar.left{
   height: inherit;
-  min-height: 120px;
   width: 7px;
   cursor: ew-resize;
   left: -7px;
@@ -74,13 +68,11 @@ body{
 .resize>.bar.top{
   height: 7px;
   width: inherit;
-  min-width: 150px;
   cursor: ns-resize;
   top: -4px;
 }
 .resize>.bar.right{
   height: inherit;
-  min-height: 120px;
   width: 7px;
   cursor: ew-resize;
   right: -7px;
@@ -88,7 +80,6 @@ body{
 .resize>.bar.bottom{
   height: 7px;
   width: inherit;
-  min-width: 150px;
   cursor: ns-resize;
   bottom: -7px;
 }
