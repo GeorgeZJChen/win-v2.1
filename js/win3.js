@@ -277,8 +277,8 @@
           y = e.clientY || e.offsetY,
           top = win.offsetTop,
           left = win.offsetLeft,
-          width = win.offsetWidth,
-          height = win.offsetHeight,
+          width = win.offsetWidth -2,
+          height = win.offsetHeight -2,
           style = self.$(self.id+"_style");
         var dmove = function (e) { //mousemove
           e = e || window.event;
@@ -291,23 +291,25 @@
             // 8 directions: left, right, top, bottom,
             //left-top or -bottom, right-top or bottom
             if (cls.indexOf("left") != -1) {
-              if(varianceX> width -170) varianceX = width -170;   //css: min-width: 170px;
+              if(varianceX> width -self.minWidth) varianceX = width -self.minWidth;   //css: min-width: 170px;
               self.setCss({
                 width: (width - varianceX) + "px",
                 left: (left + varianceX) + "px"
               }, style);
             } else if (cls.indexOf("right") != -1) {
+              if(varianceX< self.minWidth-width) varianceX = self.minWidth-width;
               self.setCss({
                 width: (width + varianceX) + "px",
               }, style);
             }
             if (cls.indexOf("top") != -1) {
-              if(varianceY> height -130) varianceY = height -130; //css: min-height: 130px;
+              if(varianceY> height -self.minHeight) varianceY = height -self.minHeight; //css: min-height: 130px;
               self.setCss({
                 height: (height - varianceY) + "px",
                 top: (top + varianceY) + "px"
               }, style);
             } else if (cls.indexOf("bottom") != -1) {
+              if(varianceY< self.minHeight - height) varianceY = self.minHeight - height;
               self.setCss({
                 height: (height + varianceY) + "px",
               }, style);
